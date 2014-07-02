@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+	<RelativeLayout 
+     	android:id="@+id/rlHeader"
+     	android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
+    <ImageView 
+        android:id="@+id/ivProfileImage"
+     	android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dp"
+        android:src="@android:drawable/screen_background_light_transparent" />
+    
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_toRightOf="@+id/ivProfileImage"
+        android:textSize="16sp" />	
+    <TextView
+        android:id="@+id/tvTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tagline"
+        android:layout_alignLeft="@+id/tvName"
+        android:layout_below="@+id/tvName"
+        android:textSize="16sp" />
+    </RelativeLayout>
+    <LinearLayout
+         android:id="@+id/llCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlHeader"
+        android:orientation="horizontal" >
+            <TextView
+            android:id="@+id/tvfollowers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9 Followers"
+            android:textSize="16sp" />
+
+            <TextView
+            android:id="@+id/tvfollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="5 Following"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+      <FrameLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentRight="true"
+          android:layout_below="@+id/llCount"
+          android:id="@+id/fragmentUserTimeline"
+          android:layout_marginTop="19dp" >
+
+      </FrameLayout>
+
+
+
+
+</RelativeLayout>
