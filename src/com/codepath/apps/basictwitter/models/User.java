@@ -52,7 +52,7 @@ public class User implements Serializable {
 			user.imageProfileUrl = jsonObject.getString("profile_image_url");
 			user.tagLine = jsonObject.getString("description");
 			user.followersCount = jsonObject.getInt("followers_count");
-			user.followersCount = jsonObject.getInt("friends_count");
+			user.followingCount = jsonObject.getInt("friends_count");
 		} catch (JSONException e) {
 			e.printStackTrace();
 			return null;

@@ -54,7 +54,16 @@ public class TimelineActivity extends FragmentActivity {
 		getMenuInflater().inflate(R.menu.tweets, menu);
 		return true;
 	}
-
+	
+	public void onCompose (MenuItem mi)
+	 {
+		 Intent i = new Intent (this, ComposeActivity.class);
+		 //pass data
+		 //get this from API?
+		 i.putExtra("screenName", "Shanthi");
+		 i.putExtra("userName", "shanthijay");
+		 startActivityForResult(i, 50);
+	 }
 	public void onProfileView(MenuItem mi) {
 		
 		Intent i = new Intent(this, ProfileActivity.class);

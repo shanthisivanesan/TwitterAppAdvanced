@@ -5,27 +5,27 @@
     tools:context="${packageName}.${activityClass}" 
     android:background="@drawable/ic_compose_twitter_bkg">
      <ImageView
-        android:id="@+id/ivComposeProfileImage"
+        android:id="@+id/ivProfileImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/ic_twitter_launch" />
+        android:src="@drawable/ic_shanthi" />
 
     <TextView
-        android:id="@+id/tvComposeScreenName"
+        android:id="@+id/tvScreenName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/ivComposeProfileImage"
+        android:layout_toRightOf="@+id/ivProfileImage"
         android:text="Screen Name" />
 
     <TextView
-        android:id="@+id/tvComposeUserName"
+        android:id="@+id/tvUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvComposeScreenName"
-        android:layout_below="@+id/tvComposeScreenName"
+        android:layout_alignLeft="@+id/tvScreenName"
+        android:layout_below="@+id/tvScreenName"
         android:text="User Name" />
 
     <TextView
@@ -39,33 +39,15 @@
     <EditText
         android:id="@+id/etStatus"
         android:layout_width="wrap_content"
-        android:layout_height="120dp"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="59dp"
+        android:layout_below="@+id/ivProfileImage"
         android:ems="10"
         android:gravity="top"
-        android:layout_below="@+id/ivComposeProfileImage"
         android:hint="@string/compose_edittext_hint"
-        android:maxLength="140" />
+        android:maxLength="140" >
 
-    <TextView
-        android:id="@+id/tvComposelabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="Compose Tweet" />
+        <requestFocus />
+    </EditText>
 
-    <Button
-        android:id="@+id/post"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="17dp"
-        android:onClick="onPost"
-        android:text="Post" />
-    
 </RelativeLayout>

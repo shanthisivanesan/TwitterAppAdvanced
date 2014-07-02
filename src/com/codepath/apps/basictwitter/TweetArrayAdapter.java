@@ -38,6 +38,17 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
 		}
 
 		ImageView ivProfileImage = (ImageView) v.findViewById(R.id.ivImageProfile);
+		ivProfileImage.setTag(tweet.getUser().getScreenName());
+		ivProfileImage.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View imageView) {
+				
+				Intent i = new Intent (getContext(), ProfileActivity.class); 
+				i.putExtra("screenName", (String)imageView.getTag());
+				imageView.getContext().startActivity (i);
+			}
+		});
 		TextView tvUserName = (TextView) v.findViewById(R.id.tvScreenName);
 		TextView tvTweetBody = (TextView) v.findViewById(R.id.tvTweetBody);
 		TextView tvTimestamp = (TextView) v.findViewById(R.id.tvTimeStamp);

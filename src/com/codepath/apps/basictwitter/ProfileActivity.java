@@ -35,14 +35,14 @@ public class ProfileActivity extends FragmentActivity {
 	}
 
 	private void loadProfileInfo(String screenName) {
-		Toast.makeText(this, "loadProfileInfo", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(this, "loadProfileInfo", Toast.LENGTH_SHORT).show();
 		TwitterApplication.getRestClient().getProfile(
 				new JsonHttpResponseHandler(){
 			
 				public void onSuccess(JSONObject json) {
-					Toast.makeText(ProfileActivity.this, "success", Toast.LENGTH_SHORT).show();
+					//Toast.makeText(ProfileActivity.this, "success", Toast.LENGTH_SHORT).show();
 					User u = User.fromJson(json);
-					getActionBar().setTitle("@" + u.getScreenName());
+					getActionBar().setTitle(u.getScreenName());
 					populateProfileHeader (u);
 				}	
 				public void onFailure(Throwable err) 

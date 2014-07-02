@@ -71,10 +71,9 @@ public class ComposeActivity extends Activity{
 	void setupViews(String screenName, String userName) {
 		etNewTweet = (EditText) findViewById(R.id.etStatus);
 		tvCount = (TextView) findViewById(R.id.tvCharCount);
-		post = (Button)findViewById (R.id.post);
-		tvScreenName = (TextView)findViewById (R.id.tvComposeScreenName);
-		tvUserName = (TextView)findViewById(R.id.tvComposeUserName);
-		ivProfileImage = (ImageView)findViewById(R.id.ivComposeProfileImage);
+		tvScreenName = (TextView)findViewById (R.id.tvScreenName);
+		tvUserName = (TextView)findViewById(R.id.tvUserName);
+		ivProfileImage = (ImageView)findViewById(R.id.ivProfileImage);
 		
 		tvScreenName.setText(screenName);
 		tvUserName.setText(userName);
