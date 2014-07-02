@@ -1,4 +1,4 @@
-TwitterClient
+﻿TwitterClient
 =============
 
 Overview: Build a simple Twitter client that supports viewing a Twitter timeline and composing a new tweet.
@@ -24,7 +24,17 @@ The following user stories are completed:
 
 8.User can then enter a new tweet and post this to twitter
 
-8.User is taken back to home timeline with new tweet visible in timeline
+9.User is taken back to home timeline with new tweet visible in timeline
+10.User can switch between Timeline and Mention views using tabs.
+11.User can view their home timeline tweets.
+12.User can view the recent mentions of their username.
+13.User can scroll to bottom of either of these lists and new tweets will load ("infinite scroll")
+14.User can navigate to view their own profile
+User can see picture, tagline, # of followers, # of following, and tweets on their profile.
+
+15.User can click on the profile image in any tweet to see another user's profile.
+16.User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
+19.Profile view should include that user's timeline
 
 Optional and Advanced
 ----------------------
