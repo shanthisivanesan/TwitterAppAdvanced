@@ -48,7 +48,6 @@ Optional and Advanced
 ----------------------
 9.Optional: User can see a counter with total number of characters left for tweet
 
-10.Advanced: User can tap a tweet to display a "detailed" view of that tweet
 
 Notes:
 
