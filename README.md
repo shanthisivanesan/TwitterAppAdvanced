@@ -20,7 +20,7 @@ The following user stories are completed:
 
 6.User can compose a new tweet
 
-7.User can click a “Compose” icon in the Action Bar on the top right
+7.User can click a ï¿½Composeï¿½ icon in the Action Bar on the top right
 
 8.User can then enter a new tweet and post this to twitter
 
@@ -36,4 +36,4 @@ Notes:
 
 Walkthrough of all user stories:
 
-![Video Walkthrough](TwitterClient.gif)
+![Video Walkthrough](TwitterClientAdvanced.gif)
