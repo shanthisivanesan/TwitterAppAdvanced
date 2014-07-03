@@ -2,7 +2,7 @@ TwitterClient V2 - Twitter App with fragments
 Overview: Build a simple Twitter client that supports viewing a Twitter home timeline,mentions timeline,user profile and composing a new tweet.
 
 Completed User Stories:
-
+=============================
 The following user stories are completed:
 
 1.User can sign in to Twitter using OAuth login
@@ -42,7 +42,7 @@ User can see picture, tagline, # of followers, # of following, and tweets on the
 17.Profile view should include that user's timeline
 
 Optional and Advanced
-
+===========================
 18.Optional: User can see a counter with total number of characters left for tweet
 
 19.Advanced: User can tap a tweet to display a "detailed" view of that tweet
