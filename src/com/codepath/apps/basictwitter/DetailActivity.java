@@ -25,7 +25,7 @@ public class DetailActivity extends Activity {
 		Intent i = getIntent();
 		Tweet t = (Tweet) i.getSerializableExtra("tweet");
 		ImageLoader loader = ImageLoader.getInstance();
-		//loader.displayImage(t.getUser().imageProfileUrl(), ivProfileImg);
+		loader.displayImage(t.getUser().getProfileImageUrl(), ivProfileImg);
 	    tvScreenName.setText(t.getUser().getScreenName());
 	    tvName.setText(t.getUser().getName());
 		tvBody.setText(t.getBody());

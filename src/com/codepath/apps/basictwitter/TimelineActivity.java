@@ -1,18 +1,24 @@
 package com.codepath.apps.basictwitter;
 
+import org.json.JSONObject;
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.codepath.apps.basictwitter.fragments.HomeTimelineFragment;
 import com.codepath.apps.basictwitter.fragments.MentionsTimelineFragment;
 import com.codepath.apps.basictwitter.listener.FragmentTabListener;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
 public class TimelineActivity extends FragmentActivity {
+	private static final int COMPOSE_ACTIVITY_REQUEST_CODE = 100;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -40,7 +46,7 @@ public class TimelineActivity extends FragmentActivity {
 		Tab tab2 = actionBar
 			.newTab()
 			.setText("Mentions")
-			.setIcon(R.drawable.ic_mentions)
+			.setIcon(R.drawable.ic_mention)
 			.setTag("MentionsTimelineFragment")
 			.setTabListener(
 			    new FragmentTabListener<MentionsTimelineFragment>(R.id.flContainer, this, "mentions",
@@ -60,13 +66,41 @@ public class TimelineActivity extends FragmentActivity {
 		 Intent i = new Intent (this, ComposeActivity.class);
 		 //pass data
 		 //get this from API?
-		 i.putExtra("screenName", "Shanthi");
-		 i.putExtra("userName", "shanthijay");
+		 //i.putExtra("screenName",R.string.screen);
+		// i.putExtra("userName", "@"+R.string.user);
+		 i.putExtra("screenName","Shanthi");
+		 i.putExtra("userName", "@shanthijay");
 		 startActivityForResult(i, 50);
 	 }
 	public void onProfileView(MenuItem mi) {
 		
 		Intent i = new Intent(this, ProfileActivity.class);
 		startActivity(i);
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == COMPOSE_ACTIVITY_REQUEST_CODE &&
+				resultCode == RESULT_OK) {
+			String status = data.getStringExtra("msg").trim();
+			Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+			/*if (status.length() > 0) {
+				client.postUpdate(status, new JsonHttpResponseHandler() {
+					@Override
+					public void onSuccess(JSONObject jsonObject) {
+						TimelineActivity.this.fetchNewTweets();
+					}
+
+					@Override
+					public void onFailure(Throwable e, String s) {
+						Log.d("debug", e.toString());
+						Log.d("debug", s);
+
+						// TODO: localize error message...
+						Toast.makeText(TimelineActivity.this, "An error occurred!", Toast.LENGTH_SHORT).show();
+					}
+				});
+			}*/
+		}
 	}
 }

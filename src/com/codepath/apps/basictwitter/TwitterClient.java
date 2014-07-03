@@ -4,6 +4,7 @@ import org.scribe.builder.api.Api;
 import org.scribe.builder.api.TwitterApi;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import com.codepath.oauth.OAuthBaseClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -28,13 +29,18 @@ public class TwitterClient extends OAuthBaseClient {
 	    public static final String REST_CONSUMER_KEY = "UyLZ5CAF6ct2TQ7hNwvyZZnCc";       // Change this
 	    public static final String REST_CONSUMER_SECRET = "0c49GpQeAZkvdpEjHQ3oXTrD5M6BQyknNeSMyseNNY1d4mgHTI"; // Change this
 	    public static final String REST_CALLBACK_URL = "oauth://cpbasictweets"; // Change this (here and in manifest)
+	    public static final String POST_TWEET = "statuses/update.json";
+	    public static final String GET_HOME_TIMELINE = "statuses/home_timeline.json";
+	    public static final String GET_PROFILE ="account/verify_credentials.json";
+	    public static final String USER_TIMELINE ="statuses/user_timeline.json";
+	    public static final String MENTIONS_TIMELINE ="statuses/mentions_timeline.json";
     
     public TwitterClient(Context context) {
         super(context, REST_API_CLASS, REST_URL, REST_CONSUMER_KEY, REST_CONSUMER_SECRET, REST_CALLBACK_URL);
     }
     
        public void getHomeTimeline(AsyncHttpResponseHandler handler, String max_id) {
-        String apiUrl = getApiUrl ("statuses/home_timeline.json");
+        String apiUrl = getApiUrl (GET_HOME_TIMELINE);
         RequestParams params = new RequestParams ();
         
         if (max_id != "")
@@ -52,7 +58,7 @@ public class TwitterClient extends OAuthBaseClient {
         RequestParams params = null;
         if (screenName == null)
         {
-            apiUrl = getApiUrl ("account/verify_credentials.json");
+            apiUrl = getApiUrl (GET_PROFILE);
         }
         else
         {
@@ -66,7 +72,7 @@ public class TwitterClient extends OAuthBaseClient {
     }
     
     public void getUserTimeline(AsyncHttpResponseHandler handler, String uid) {
-        String apiUrl = getApiUrl ("statuses/user_timeline.json");
+        String apiUrl = getApiUrl (USER_TIMELINE);
         RequestParams params = null;
         
         if (uid != null)
@@ -77,18 +83,16 @@ public class TwitterClient extends OAuthBaseClient {
   
         client.get(apiUrl, params, handler);
     }
-    
-    public void postTweet(AsyncHttpResponseHandler handler, String msg)
-    {
-        String apiUrl = getApiUrl ("statuses/update.json");
-        RequestParams params = new RequestParams ();
-        params.put ("status", msg);
-        client.post(apiUrl, params, handler);
+    public void postTweet(AsyncHttpResponseHandler handler, String status) {
+    	String apiUrl = getApiUrl(POST_TWEET);
+        RequestParams params = new RequestParams();
+        params.put("status", status);
+    	client.post(apiUrl, params, handler);
     }
-
+    
     public void getMentionsTimeline(
             AsyncHttpResponseHandler handler, String max_id) {
-        String apiUrl = getApiUrl ("statuses/mentions_timeline.json");
+        String apiUrl = getApiUrl (MENTIONS_TIMELINE);
         RequestParams params = new RequestParams ();
         
         if (max_id != "")

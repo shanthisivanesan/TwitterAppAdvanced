@@ -10,11 +10,13 @@
     <string name="title_activity_timeline">My Latest Tweets</string>
     <string name="compose_edittext_hint">What are you up to?</string>
     <string name="compose_title">Compose</string>
+     <string name="details_title">Tweet Details</string>
     <string name="cancel_title">Cancel</string>
     <string name="send_title">Send</string>
     <string name="title_activity_compose">Compose</string>
     <string name="profile_title">Profile</string>
-    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_profile">User Profile</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="user">shanthijay</string>
+    <string name="screen">shanthi</string>
 </resources>
