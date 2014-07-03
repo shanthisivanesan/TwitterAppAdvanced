@@ -95,10 +95,6 @@ public class ComposeActivity extends Activity{
 
 	public void onSend(MenuItem mi) {
 		String tweet = etNewTweet.getText().toString();
-		//Toast.makeText(this, etNewTweet.getText(), Toast.LENGTH_SHORT).show();
-
-			//client.postTweet(tweet);
-			//finish();
 		Intent i = new Intent();
 		i.putExtra("status", tweet);
 		setResult(RESULT_OK, i);
@@ -108,8 +104,6 @@ public class ComposeActivity extends Activity{
 			public void onSuccess(int arg0, JSONObject jsonObject) {
 				Tweet newTweet = Tweet.fromJSON(jsonObject);
 				Intent i = new Intent();
-				//i.putExtra("status", tweet);
-				//setResult(RESULT_OK, i);
 				finish();
 			}
 			
